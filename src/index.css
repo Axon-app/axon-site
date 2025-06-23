@@ -1,0 +1,1124 @@
+@import "@fontsource/orbitron/400.css";
+@import "@fontsource/orbitron/700.css";
+@import "@fontsource/orbitron/900.css";
+@import "@fontsource/rajdhani/400.css";
+@import "@fontsource/rajdhani/600.css";
+@import "@fontsource/rajdhani/700.css";
+
+@import "tailwindcss";
+
+/* Animaciones personalizadas */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(50px, -70px) scale(1.2) rotate(30deg);
+  }
+  66% {
+    transform: translate(-40px, 40px) scale(0.8) rotate(-20deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Nueva animación para cards de clientes */
+@keyframes cardSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Clases de animación */
+.animate-blob {
+  animation: blob 10s infinite ease-in-out;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.6s ease-out;
+}
+
+.animate-bounceIn {
+  animation: bounceIn 0.8s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+/* Clases de animation-delay para elementos con delays largos */
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Nuevas animaciones para la sección de tecnologías profesional */
+
+/* Animación de rotación lenta para fondos */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Gradiente radial personalizado */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
+/* Delays adicionales para animaciones */
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Efecto de hover mejorado para cards de tecnología */
+.tech-card-hover {
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tech-card-hover:hover {
+  transform: translateY(-12px) scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Animación de entrada escalonada */
+@keyframes staggeredFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-staggered {
+  animation: staggeredFadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Efecto de pulso suave para indicadores */
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Efecto de resplandor para botones CTA */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-effect:hover {
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Animación de aparición para stats */
+@keyframes countUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.8s ease-out;
+}
+
+/* Efectos de backdrop blur mejorados */
+.backdrop-blur-enhanced {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Animación de línea divisoria */
+@keyframes line-grow {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-line-grow {
+  animation: line-grow 1s ease-out;
+}
+
+/* Efecto de hover para títulos */
+.title-hover-effect:hover {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset para navegación con navbar fijo */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Reset de estilos base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Estilos para scrollbar personalizado en modales */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #4f46e5 #374151;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4f46e5, #06b6d4);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6366f1, #0891b2);
+}
+
+/* Animaciones adicionales para modales */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modalSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+}
+
+.modal-enter {
+  animation: modalSlideIn 0.3s ease-out forwards;
+}
+
+.modal-exit {
+  animation: modalSlideOut 0.3s ease-out forwards;
+}
+
+/* Mejoras de hover para enlaces en modales */
+.prose a:hover {
+  color: #60a5fa !important;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Estilos para secciones numeradas */
+.numbered-section {
+  counter-increment: section;
+}
+
+.numbered-section::before {
+  content: counter(section);
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+/* Animaciones para la sección de tecnologías */
+@keyframes techFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes techGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.6),
+      0 0 40px rgba(59, 130, 246, 0.3);
+  }
+}
+
+.tech-float {
+  animation: techFloat 3s ease-in-out infinite;
+}
+
+.tech-glow-hover:hover {
+  animation: techGlow 1.5s ease-in-out infinite;
+}
+
+/* Efecto de grid dinámico para las tecnologías */
+.tech-grid-item {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tech-grid-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  z-index: 10;
+}
+
+/* Animación para carrusel infinito de tecnologías */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Animación para banner de testimonios */
+@keyframes scroll-testimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-testimonials {
+  animation: scroll-testimonials 45s linear infinite;
+}
+
+/* Pausa la animación al hacer hover */
+.animate-scroll-testimonials:hover {
+  animation-play-state: paused;
+}
+
+/* Pausa la animación al hacer hover */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Animaciones para logos */
+@keyframes rotateHorizontal {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes rotateHorizontalReverse {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
+@keyframes lightReflection {
+  0% {
+    filter: brightness(1.1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+  }
+  50% {
+    filter: brightness(1.6) drop-shadow(0 0 15px rgba(255, 255, 255, 0.9))
+      drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+  }
+  100% {
+    filter: brightness(1.1) drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+  }
+}
+
+/* Clases para los logos animados */
+.logo-rotate-1 {
+  animation: rotateHorizontal 12s ease-in-out infinite,
+    lightReflection 5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.logo-rotate-2 {
+  animation: rotateHorizontalReverse 15s ease-in-out infinite,
+    lightReflection 4s ease-in-out infinite 1.5s;
+  transform-style: preserve-3d;
+}
+
+/* Enhanced Navbar Animations */
+@keyframes navSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes navGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+  }
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(5deg);
+  }
+}
+
+@keyframes menuSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar Animation Classes */
+.nav-slide-in {
+  animation: navSlideIn 0.6s ease-out;
+}
+
+.nav-glow {
+  animation: navGlow 3s ease-in-out infinite;
+}
+
+.logo-float {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.menu-slide {
+  animation: menuSlide 0.3s ease-out;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced backdrop blur for navbar */
+.navbar-blur {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* Glass effect */
+.glass-effect {
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Estilos específicos para mejorar interacción con formularios */
+.modal-content {
+  pointer-events: auto !important;
+  z-index: 10000 !important;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  pointer-events: auto !important;
+  user-select: auto !important;
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  touch-action: manipulation !important;
+}
+
+.modal-content select {
+  cursor: pointer !important;
+  -webkit-appearance: menulist !important;
+  -moz-appearance: menulist !important;
+  appearance: menulist !important;
+}
+
+.modal-content select option {
+  background-color: rgb(30 41 59) !important; /* slate-800 */
+  color: white !important;
+  padding: 8px !important;
+}
+
+/* Asegurar que los campos de formulario sean accesibles */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgb(59 130 246) !important; /* blue-500 */
+  outline-offset: 2px !important;
+}
+
+/* Evitar que los elementos backdrop interfieran */
+.modal-backdrop {
+  pointer-events: auto;
+}
+
+.modal-backdrop > * {
+  pointer-events: none;
+}
+
+.modal-backdrop .modal-content {
+  pointer-events: auto;
+}
+
+/* Mejorar visibilidad de opciones de select en modo oscuro */
+select option {
+  background-color: rgb(30 41 59) !important; /* slate-800 */
+  color: white !important;
+}
+
+select option:checked {
+  background-color: rgb(59 130 246) !important; /* blue-500 */
+}
+
+/* Asegurar que los inputs no estén siendo bloqueados */
+.form-input,
+.form-select,
+.form-textarea {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* Específicamente para elementos de formulario en modales */
+.modal-content form {
+  pointer-events: auto !important;
+  z-index: 10001 !important;
+}
+
+.modal-content form * {
+  pointer-events: auto !important;
+}
+
+/* Asegurar que no hay overlay bloqueando */
+.modal-content::before,
+.modal-content::after {
+  display: none !important;
+}
+
+/* Mejorar interacción con elementos de formulario */
+.modal-content button {
+  pointer-events: auto !important;
+  z-index: 1001 !important;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  z-index: 1002 !important;
+  position: relative !important;
+}
+
+/* Corregir problema con backdrop */
+.modal-backdrop > *:not(.modal-content) {
+  pointer-events: none;
+}
+
+/* Animaciones para sección de clientes */
+@keyframes clientCardHover {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(5deg);
+  }
+}
+
+@keyframes statsCounter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Utilidades de animación para clientes */
+.animate-client-card-hover {
+  animation: clientCardHover 0.3s ease-out forwards;
+}
+
+.animate-logo-float {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.animate-stats-counter {
+  animation: statsCounter 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+/* Efectos de glassmorphism mejorados */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 16px 64px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Animación de gradiente para texto del hero */
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease-in-out infinite;
+}
+
+/* Animación de pulso mejorada */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* ===== BANNER PROFESIONAL - EFECTOS 3D AVANZADOS ===== */
+
+/* Texto 3D Ultra Profesional */
+.text-3d-ultra-pro {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  text-shadow:
+    /* Capas de profundidad 3D */
+    1px 1px 0 rgba(0, 0, 0, 0.9),
+    2px 2px 0 rgba(0, 0, 0, 0.85),
+    3px 3px 0 rgba(0, 0, 0, 0.8),
+    4px 4px 0 rgba(0, 0, 0, 0.75),
+    5px 5px 0 rgba(0, 0, 0, 0.7),
+    6px 6px 0 rgba(0, 0, 0, 0.65),
+    7px 7px 0 rgba(0, 0, 0, 0.6),
+    8px 8px 0 rgba(0, 0, 0, 0.55),
+    9px 9px 0 rgba(0, 0, 0, 0.5),
+    10px 10px 0 rgba(0, 0, 0, 0.45),
+    /* Sombras difusas atmosféricas */
+    12px 12px 20px rgba(0, 0, 0, 0.8),
+    18px 18px 30px rgba(0, 0, 0, 0.6),
+    25px 25px 40px rgba(0, 0, 0, 0.4),
+    /* Efectos de glow corporativo */
+    0 0 30px rgba(59, 130, 246, 0.5),
+    0 0 60px rgba(6, 182, 212, 0.3),
+    0 0 90px rgba(147, 51, 234, 0.2);
+
+  /* Filtros avanzados */
+  filter:
+    drop-shadow(0 0 25px rgba(59, 130, 246, 0.4))
+    drop-shadow(0 0 50px rgba(6, 182, 212, 0.2));
+}
+
+/* Gradiente Corporativo Animado Premium */
+.gradient-corporate-pro {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f0f9ff 15%,
+    #e0f2fe 30%,
+    #b3e5fc 45%,
+    #81d4fa 60%,
+    #4fc3f7 75%,
+    #29b6f6 90%,
+    #0288d1 100%
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShiftPro 6s ease-in-out infinite;
+}
+
+@keyframes gradientShiftPro {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 100%;
+  }
+}
+
+/* Gradiente Futuro Animado */
+.gradient-future-pro {
+  background: linear-gradient(
+    135deg,
+    #ff6b6b 0%,
+    #feca57 20%,
+    #48dbfb 40%,
+    #ff9ff3 60%,
+    #54a0ff 80%,
+    #5f27cd 100%
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: futureGradient 8s ease-in-out infinite;
+}
+
+@keyframes futureGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  33% {
+    background-position: 100% 0%;
+  }
+  66% {
+    background-position: 0% 100%;
+  }
+}
+
+/* Efectos de Hover 3D Profesional */
+.text-hover-3d:hover {
+  transform:
+    perspective(1000px)
+    rotateX(5deg)
+    rotateY(-5deg)
+    translateZ(10px)
+    scale(1.02);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Banner de Fondo Profesional Animado */
+.banner-bg-professional {
+  background:
+    radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at center, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
+  animation: backgroundShift 12s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    background-position: 0% 0%, 100% 100%, 50% 50%;
+  }
+  33% {
+    background-position: 30% 30%, 70% 70%, 80% 20%;
+  }
+  66% {
+    background-position: 70% 10%, 30% 90%, 20% 80%;
+  }
+}
+
+/* Partículas Flotantes Animadas */
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  animation: floatParticle 15s linear infinite;
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Efectos de Líneas Geométricas */
+.geometric-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: geometricMove 20s linear infinite;
+}
+
+@keyframes geometricMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Título Corporativo Premium */
+.corporate-title {
+  font-family: 'Orbitron', 'Rajdhani', system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Efectos de Resplandor Dinámico */
+.dynamic-glow {
+  position: relative;
+}
+
+.dynamic-glow::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.3) 0%,
+    rgba(6, 182, 212, 0.2) 50%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  opacity: 0;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* Efectos Adicionales de Pulso y Resplandor */
+.pulse-professional {
+  animation: professionalPulse 4s ease-in-out infinite;
+}
+
+@keyframes professionalPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Animación de Entrada Escalonada para elementos del Hero */
+.hero-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroFadeIn 1s ease-out forwards;
+}
+
+.hero-fade-in-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.hero-fade-in-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.hero-fade-in-delay-3 {
+  animation-delay: 0.6s;
+}
+
+.hero-fade-in-delay-4 {
+  animation-delay: 0.8s;
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mejoras en la clase border-3 si no existe */
+.border-3 {
+  border-width: 3px;
+}

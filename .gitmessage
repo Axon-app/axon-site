@@ -1,0 +1,35 @@
+# Template para Commits Profesionales
+
+# Tipo: Descripción breve (máximo 50 caracteres)
+# |<----  Máximo 50 caracteres  ---->|
+
+# Explicación detallada del cambio (opcional)
+# |<----   Máximo 72 caracteres por línea   ---->|
+
+# --- TIPOS DE COMMIT PROFESIONALES ---
+# feat:     Nueva funcionalidad
+# fix:      Corrección de bug
+# docs:     Cambios en documentación
+# style:    Cambios de formato (espacios, comas, etc)
+# refactor: Refactorización de código
+# perf:     Mejoras de rendimiento
+# test:     Agregar o modificar tests
+# chore:    Cambios en build, dependencias, etc
+
+# --- EJEMPLOS PROFESIONALES ---
+# feat: agregar validación de formulario de contacto
+# fix: corregir error en cálculo de totales
+# docs: actualizar README con instrucciones de instalación
+# style: aplicar formato consistente en componentes
+# refactor: extraer lógica de autenticación a hook personalizado
+# perf: optimizar renderizado de lista de productos
+# test: agregar tests unitarios para utilidades de fecha
+# chore: actualizar dependencias a versiones LTS
+
+# --- REGLAS PARA COMMITS PROFESIONALES ---
+# 1. Primera línea: máximo 50 caracteres
+# 2. Segunda línea: en blanco
+# 3. Descripción: máximo 72 caracteres por línea
+# 4. Usar imperativo: "agregar" no "agregado"
+# 5. Sin punto final en la primera línea
+# 6. Ser específico pero conciso

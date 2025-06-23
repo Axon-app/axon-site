@@ -1,0 +1,35 @@
+{
+    "recommendations": [
+        "github.copilot",
+        "github.copilot-chat",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-typescript-next",
+        "christian-kohler.path-intellisense",
+        "ms-vscode.vscode-json",
+        "formulahendry.auto-rename-tag",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "ms-vscode.vscode-js-debug"
+    ],
+    "unwantedRecommendations": [
+        "tabnine.tabnine-vscode",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-vscode.vscode-ai-toolkit",
+        "esbenp.prettier-vscode",
+        "usernamehw.errorlens",
+        "ms-vscode.vscode-error-lens",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-spanish",
+        "ban.spellright",
+        "vscjava.vscode-java-pack",
+        "ms-python.python",
+        "ms-dotnettools.csharp",
+        "ms-vscode.cpptools",
+        "golang.go",
+        "rust-lang.rust",
+        "ms-vscode.remote-repositories",
+        "github.codespaces",
+        "ms-vscode.vscode-github-authentication"
+    ]
+}

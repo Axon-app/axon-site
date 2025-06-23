@@ -1,0 +1,47 @@
+{
+  "name": "axon",
+  "private": true,
+  "version": "2.4.0",
+  "type": "module",
+  "homepage": "https://axon-app.github.io/Axon.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/axon-app/Axon.app.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "clean": "rimraf dist",
+    "clean:build": "npm run clean && npm run build",
+    "deploy": "vite build && gh-pages -d dist",
+    "deploy:production": "npm run clean:build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@fontsource/orbitron": "^5.2.6",
+    "@fontsource/rajdhani": "^5.2.6",
+    "canvas": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.3.0",
+    "globals": "^16.0.0",
+    "postcss": "^8.4.31",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.10",
+    "terser": "^5.42.0",
+    "to-ico": "^1.0.1",
+    "vite": "^6.3.5"
+  }
+}

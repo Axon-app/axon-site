@@ -1,0 +1,53 @@
+# Configuración de Git para Commits Profesionales
+
+[core]
+    editor = "code --wait"
+    autocrlf = true
+    quotepath = false
+
+[user]
+    # Configurar tu nombre y email
+    # name = "Tu Nombre"
+    # email = "tu.email@ejemplo.com"
+
+[commit]
+    template = ~/.gitmessage
+
+[pull]
+    rebase = false
+
+[push]
+    default = simple
+
+[alias]
+    # Commits profesionales
+    cm = commit -m
+    ca = commit -am
+    co = checkout
+    br = branch
+    st = status --short --branch
+    lg = log --oneline --graph --all --decorate
+
+    # Commit con template profesional
+    commit-pro = "!f() { git commit -m \"$1\" -m \"$2\"; }; f"
+
+    # Mostrar último commit
+    last = log -1 HEAD --stat
+
+    # Deshacer último commit (mantener cambios)
+    undo = reset --soft HEAD~1
+
+    # Limpiar branches mergeados
+    cleanup = "!git branch --merged | grep -v '\\*\\|main\\|master\\|develop' | xargs -n 1 git branch -d"
+
+[diff]
+    tool = vscode
+
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+    tool = vscode
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
