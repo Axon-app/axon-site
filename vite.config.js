@@ -15,9 +15,9 @@ export default defineConfig(({ mode }) => ({
   // Configuración del servidor de desarrollo
   server: {
     open: true,
-    port: 5173,
+    port: 3000,
     host: true, // Necesario para acceso por red
-    strictPort: true,
+    strictPort: false, // Permite usar puerto alternativo si está ocupado
   },
 
   // Optimizaciones de build
