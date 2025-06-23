@@ -598,9 +598,8 @@ const App = () => {
             ) : (
               <LogoSVG className="h-20 md:h-28 w-20 md:w-28 mx-auto" />
             )}
-          </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight animate-fadeInUp text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
-            Desarrollamos el Futuro.
+          </div>          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight animate-fadeInUp text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+            🚀 Desarrollamos el Futuro Digital.
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-10 animate-fadeInUp delay-200">
             Soluciones de software y aplicaciones que transforman ideas en
