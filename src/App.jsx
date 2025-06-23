@@ -660,8 +660,7 @@ const App = () => {
                         textShadow: '1px 1px 0 #475569, 2px 2px 0 #475569, 3px 3px 0 #475569, 4px 4px 0 #475569, 5px 5px 0 #475569'
                       }}>
                         Desarrollamos
-                      </span>
-                      <span className="relative text-white" style={{
+                      </span>                      <span className="relative text-white" style={{
                         textShadow: '0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.3)'
                       }}>
                         Desarrollamos

@@ -18,6 +18,13 @@ export default defineConfig(({ mode }) => ({
     port: 3000,
     host: true, // Necesario para acceso por red
     strictPort: false, // Permite usar puerto alternativo si está ocupado
+    hmr: {
+      overlay: true, // Mostrar errores en overlay
+    },
+    watch: {
+      usePolling: true, // Útil en algunos sistemas Windows
+      interval: 1000, // Intervalo de polling
+    },
   },
 
   // Optimizaciones de build
