@@ -1,225 +1,104 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "dev",
-			"type": "shell",
-			"command": "npm run dev",
-			"group": "build",
-			"isBackground": true,
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": true,
-				"clear": false
-			},
-			"problemMatcher": [
-				{
-					"pattern": [
-						{
-							"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-							"file": 1,
-							"line": 2,
-							"column": 3,
-							"severity": 4,
-							"message": 5
-						}
-					],
-					"background": {
-						"activeOnStart": true,
-						"beginsPattern": "^\\s*Local:\\s+",
-						"endsPattern": "^\\s*ready in"
-					}
-				}
-			]
-		},
-		{
-			"label": "build",
-			"type": "shell",
-			"command": "npm run build",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": [
-				"$tsc",
-				"$eslint-stylish"
-			]
-		},
-		{
-			"label": "preview",
-			"type": "shell",
-			"command": "npm run preview",
-			"group": "test",
-			"dependsOn": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "lint",
-			"type": "shell",
-			"command": "npm run lint",
-			"group": "test",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": [
-				"$eslint-stylish"
-			]
-		},
-		{
-			"label": "lint:fix",
-			"type": "shell",
-			"command": "npm run lint -- --fix",
-			"group": "test",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": [
-				"$eslint-stylish"
-			]
-		},
-		{
-			"label": "generate-social-images",
-			"type": "shell",
-			"command": "node generate-social-preview.cjs && node generate-whatsapp-preview.cjs",
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "validate-social-images",
-			"type": "shell",
-			"command": "echo 'Social images validation: All images present and valid'",
-			"group": "test",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "clean",
-			"type": "shell",
-			"command": "Remove-Item -Path dist -Recurse -Force -ErrorAction SilentlyContinue",
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "silent",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "clean:build",
-			"type": "shell",
-			"command": "Remove-Item -Path dist -Recurse -Force -ErrorAction SilentlyContinue && npm run build",
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": [
-				"$tsc",
-				"$eslint-stylish"
-			]
-		},
-		{
-			"label": "install",
-			"type": "shell",
-			"command": "npm install",
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "🤖 Optimizar Copilot",
-			"type": "shell",
-			"command": "powershell",
-			"args": [
-				"-Command",
-				"Write-Host '🤖 Optimizando GitHub Copilot...' -ForegroundColor Cyan; Write-Host '⚡ Configuración de rapidez aplicada' -ForegroundColor Green; Write-Host '🎨 Configuración de creatividad activada' -ForegroundColor Magenta; Write-Host '🛡️ Configuración de precisión habilitada' -ForegroundColor Yellow; Write-Host '🧠 Capacidades complejas activadas' -ForegroundColor Blue; Write-Host '✅ Copilot optimizado exitosamente!' -ForegroundColor Green"
-			],
-			"group": "build",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": true,
-				"panel": "shared"
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "🚀 Dev Copilot",
-			"type": "shell",
-			"command": "npm run dev",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"isBackground": true,
-			"dependsOn": "🤖 Optimizar Copilot",
-			"presentation": {
-				"echo": true,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": true,
-				"clear": false
-			},
-			"problemMatcher": [
-				{
-					"pattern": [
-						{
-							"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-							"file": 1,
-							"line": 2,
-							"column": 3,
-							"severity": 4,
-							"message": 5
-						}
-					],
-					"background": {
-						"activeOnStart": true,
-						"beginsPattern": "^\\s*Local:\\s+",
-						"endsPattern": "^\\s*ready in"
-					}
-				}
-			]
-		}
-	]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "dev",
+            "type": "shell",
+            "command": "npm run dev",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": false
+            },
+            "problemMatcher": {
+                "owner": "typescript",
+                "pattern": "$tsc",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".",
+                    "endsPattern": "ready in"
+                }
+            }
+        },
+
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "npm run build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": ["$tsc"]
+        },
+        {
+            "label": "preview",
+            "type": "shell",
+            "command": "npm run preview",
+            "group": "test",
+            "dependsOn": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "lint",
+            "type": "shell",
+            "command": "npm run lint",
+            "group": "test",
+            "problemMatcher": ["$eslint-stylish"]
+        },
+        {
+            "label": "lint:fix",
+            "type": "shell",
+            "command": "npm run lint -- --fix",
+            "group": "test",
+            "problemMatcher": ["$eslint-stylish"]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "Remove-Item -Path dist -Recurse -Force -ErrorAction SilentlyContinue",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "clean:build",
+            "type": "shell",
+            "command": "Remove-Item -Path dist -Recurse -Force -ErrorAction SilentlyContinue && npm run build",
+            "group": "build",
+            "problemMatcher": ["$tsc"]
+        },
+        {
+            "label": "install",
+            "type": "shell",
+            "command": "npm install",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
 }

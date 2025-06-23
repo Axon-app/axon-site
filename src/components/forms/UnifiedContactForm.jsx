@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { sendUnifiedEmail } from "../../services/emailService";
 
 // === CONSTANTES EXTRAÍDAS ===
@@ -193,7 +193,7 @@ export const UnifiedContactForm = React.memo(
     }, [mode]);
 
     // Verificar campos completados
-    const getCompletedFields = useCallback(() => {
+    const getCompletedFields = useMemo(() => {
       const requiredFields = getRequiredFields();
       return requiredFields.filter((field) => {
         const value = formData[field.key];
@@ -202,7 +202,7 @@ export const UnifiedContactForm = React.memo(
     }, [formData, getRequiredFields]);
 
     // Verificar campos pendientes
-    const getPendingFields = useCallback(() => {
+    const getPendingFields = useMemo(() => {
       const requiredFields = getRequiredFields();
       return requiredFields.filter((field) => {
         const value = formData[field.key];
@@ -211,8 +211,8 @@ export const UnifiedContactForm = React.memo(
     }, [formData, getRequiredFields]);
 
     // Verificar si el formulario está completo
-    const isFormComplete = useCallback(() => {
-      return getPendingFields().length === 0;
+    const isFormComplete = useMemo(() => {
+      return getPendingFields.length === 0;
     }, [getPendingFields]); // Validación estricta con reglas específicas
     const validateForm = useCallback(() => {
       const newErrors = {};
@@ -612,17 +612,17 @@ export const UnifiedContactForm = React.memo(
             <div className="flex items-center space-x-2">
               <div
                 className={`w-3 h-3 rounded-full ${
-                  isFormComplete()
+                  isFormComplete
                     ? "bg-green-500 animate-pulse"
                     : "bg-orange-500"
                 }`}
               ></div>
               <span
                 className={`text-sm font-medium ${
-                  isFormComplete() ? "text-green-400" : "text-orange-400"
+                  isFormComplete ? "text-green-400" : "text-orange-400"
                 }`}
               >
-                {isFormComplete() ? "Listo para enviar" : "Campos pendientes"}
+                {isFormComplete ? "Listo para enviar" : "Campos pendientes"}
               </span>
             </div>
           </div>
@@ -632,7 +632,7 @@ export const UnifiedContactForm = React.memo(
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm text-gray-400">Progreso</span>
               <span className="text-sm font-medium text-blue-400">
-                {getCompletedFields().length} / {getRequiredFields().length}
+                {getCompletedFields.length} / {getRequiredFields().length}
               </span>
             </div>
             <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
@@ -640,7 +640,7 @@ export const UnifiedContactForm = React.memo(
                 className="h-full bg-gradient-to-r from-blue-500 to-green-500 rounded-full transition-all duration-500 ease-out"
                 style={{
                   width: `${
-                    (getCompletedFields().length / getRequiredFields().length) *
+                    (getCompletedFields.length / getRequiredFields().length) *
                     100
                   }%`,
                 }}
@@ -649,7 +649,7 @@ export const UnifiedContactForm = React.memo(
           </div>
 
           {/* Lista de campos pendientes */}
-          {getPendingFields().length > 0 && (
+          {getPendingFields.length > 0 && (
             <div className="space-y-2">
               <h4 className="text-sm font-medium text-orange-400 flex items-center">
                 <svg
@@ -668,7 +668,7 @@ export const UnifiedContactForm = React.memo(
                 Campos obligatorios pendientes:
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {getPendingFields().map((field) => (
+                {getPendingFields.map((field) => (
                   <div
                     key={field.key}
                     className="flex items-center space-x-2 p-2 bg-orange-500/10 border border-orange-500/20 rounded-lg"
@@ -684,7 +684,7 @@ export const UnifiedContactForm = React.memo(
           )}
 
           {/* Mensaje de éxito cuando está completo */}
-          {isFormComplete() && (
+          {isFormComplete && (
             <div className="flex items-center space-x-3 p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
               <div className="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <svg
@@ -974,7 +974,7 @@ export const UnifiedContactForm = React.memo(
             {/* Botón de envío mejorado con estado dinámico */}
             <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-700/30 shadow-xl">
               {/* Indicador de estado antes del botón */}
-              {!isFormComplete() && (
+              {!isFormComplete && (
                 <div className="flex items-center space-x-2 mb-4">
                   <div className="w-4 h-4 bg-orange-500 rounded-full animate-pulse"></div>
                   <span className="text-sm text-orange-300">
@@ -985,17 +985,17 @@ export const UnifiedContactForm = React.memo(
 
               <button
                 type="submit"
-                disabled={isSubmitting || !isFormComplete()}
+                disabled={isSubmitting || !isFormComplete}
                 className={`w-full relative overflow-hidden group py-4 px-8 rounded-2xl font-bold text-white transition-all duration-500 transform ${
                   isSubmitting
                     ? "bg-gray-600 cursor-not-allowed scale-95"
-                    : !isFormComplete()
+                    : !isFormComplete
                     ? "bg-gray-700 cursor-not-allowed opacity-50"
                     : "bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 hover:from-blue-700 hover:via-purple-700 hover:to-blue-900 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
                 }`}
               >
                 {/* Efecto de brillo animado solo cuando está habilitado */}
-                {!isSubmitting && isFormComplete() && (
+                {!isSubmitting && isFormComplete && (
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 )}
 
@@ -1005,7 +1005,7 @@ export const UnifiedContactForm = React.memo(
                       <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
                       <span>Enviando...</span>
                     </>
-                  ) : !isFormComplete() ? (
+                  ) : !isFormComplete ? (
                     <>
                       <svg
                         className="w-5 h-5 mr-3 opacity-50"

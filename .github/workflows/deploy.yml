@@ -2,24 +2,27 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
     paths-ignore:
       - "**.md"
       - ".vscode/**"
       - ".github/*.md"
+      - "LICENSE"
+      - ".gitignore"
   pull_request:
-    branches:
-      - main
+    branches: [main]
     paths-ignore:
       - "**.md"
       - ".vscode/**"
       - ".github/*.md"
+      - "LICENSE"
+      - ".gitignore"
   workflow_dispatch:
 
 env:
   NODE_VERSION: "20"
   HUSKY: "0"
+  CACHE_KEY_PREFIX: "v1" # Para invalidar cache cuando sea necesario
 
 permissions:
   contents: read
@@ -40,14 +43,27 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
           cache-dependency-path: package-lock.json
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        id: node-cache
+        with:
+          path: node_modules
+          key: ${{ env.CACHE_KEY_PREFIX }}-${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ env.CACHE_KEY_PREFIX }}-${{ runner.os }}-node-
+
       - name: Install dependencies
+        if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-optional
+
       - name: Run linting
         run: npm run lint
 
@@ -61,28 +77,47 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
           cache-dependency-path: package-lock.json
+
+      - name: Restore node_modules cache
+        uses: actions/cache@v3
+        id: node-cache
+        with:
+          path: node_modules
+          key: ${{ env.CACHE_KEY_PREFIX }}-${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
       - name: Install dependencies
+        if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm ci --prefer-offline --no-audit --no-optional
+
       - name: Build project
-        run: npm run build
+        run: |
+          echo "Starting build process at $(date)"
+          npm run build
+          echo "Build completed at $(date)"
         env:
           NODE_ENV: production
           CI: true
+
       - name: Verify build output
         run: |
           if [ ! -d "dist" ]; then
-            echo "Build failed - dist directory not found" && exit 1;
+            echo "::error::Build failed - dist directory not found"
+            exit 1
           fi
           if [ ! -f "dist/index.html" ]; then
-            echo "Build failed - index.html not found in dist" && exit 1;
+            echo "::error::Build failed - index.html not found in dist"
+            exit 1
           fi
-          echo "Build verified successfully"
+          echo "::notice::Build verified successfully"
+          echo "Build size: $(du -sh dist | cut -f1)"
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -101,7 +136,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
       - name: Verify deployment
         run: |
-          echo "Site available at: ${{ steps.deployment.outputs.page_url }}"
-          echo "Deployment finished at $(date)"
+          echo "::notice::Site deployed to: ${{ steps.deployment.outputs.page_url }}"
+          echo "::notice::Deployment completed at $(date)"

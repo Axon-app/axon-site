@@ -1,191 +1,95 @@
 {
-    // React y JavaScript
+    // ===== Configuración del Editor y Workspace =====
     "files.associations": {
         "*.jsx": "javascriptreact",
         "*.js": "javascript",
         "*.ts": "typescript",
-        "*.tsx": "typescriptreact",
-        "*.java": "plaintext"
+        "*.tsx": "typescriptreact"
     },
+
+    // Editor Principal
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+
+    // Autoguardado y Limpieza
+    "files.autoSave": "onFocusChange",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+
+    // ===== React y JavaScript =====
     "emmet.includeLanguages": {
-        "javascriptreact": "html"
+        "javascriptreact": "html",
+        "typescript": "html",
+        "typescriptreact": "html"
     },
     "emmet.triggerExpansionOnTab": true,
-    // ESLint optimizado
-    "eslint.workingDirectories": [
-        {
-            "directory": ".",
-            "changeProcessCWD": true
-        }
-    ],
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact"
-    ],
-    "eslint.format.enable": true,
+
+    // ESLint
+    "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit"
+    },
+
     // TypeScript/JavaScript
-    "typescript.preferences.includePackageJsonAutoImports": "off",
     "javascript.preferences.quoteStyle": "double",
     "typescript.preferences.quoteStyle": "double",
-    // Tailwind CSS
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // ===== GitHub Copilot =====
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true
+    },
+    "github.copilot.advanced": {
+        "length": 500,
+        "temperature": 0.5,
+        "indentationMode": "automatic"
+    },
+    "github.copilot.chat": {
+        "localeOverride": "es"
+    },
+
+    // ===== Tailwind CSS =====
     "tailwindCSS.includeLanguages": {
         "html": "html",
         "javascript": "javascript",
-        "javascriptreact": "javascriptreact"
+        "javascriptreact": "javascriptreact",
+        "typescript": "typescript",
+        "typescriptreact": "typescriptreact"
     },
     "tailwindCSS.experimental.classRegex": [
-        [
-            "clsx\\(([^)]*)\\)",
-            "(?:'|\"|`)([^']*)(?:'|\"|`)"
-        ],
-        [
-            "className\\s*:\\s*['\"`]([^'\"`]*)['\"`]"
-        ]
-    ],    // Formateo y autoguardado PROFESIONAL Y CONTROLADO
-    "editor.formatOnSave": false,                     // Manual para control total
-    "editor.formatOnPaste": true,                     // Solo al pegar para limpieza
-    "editor.formatOnType": true,                      // Formateo inteligente al escribir
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",          // ESLint explícito
-        "source.organizeImports": "explicit",        // Organizar imports explícito
-        "source.removeUnusedImports": "explicit"     // Remover imports no usados
-    },
+        ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+        ["className\\s*:\\s*['\"`]([^'\"`]*)['\"`]"]
+    ],
 
-    // Configuración de guardado inteligente
-    "files.autoSave": "onFocusChange",               // Guardar al cambiar foco
-    "files.autoSaveDelay": 2000,                     // Delay profesional
-    "files.trimTrailingWhitespace": true,            // Limpiar espacios
-    "files.insertFinalNewline": true,                // Nueva línea final
-    "files.trimFinalNewlines": true,                 // Limpiar líneas finales extra// Configuración de sugerencias PROFESIONAL Y CONTROLADA
-    "editor.quickSuggestions": {
-        "strings": "inline",        // Solo sugerencias inline en strings
-        "comments": "off",          // Sin sugerencias en comentarios
-        "other": true
-    },
-    "editor.quickSuggestionsDelay": 300,      // Delay profesional
-    "editor.suggest.insertMode": "insert",    // Insertar sin reemplazar
-    "editor.suggest.preview": true,           // Preview para revisar antes
-    "editor.suggest.shareSuggestSelections": true,
-    "editor.acceptSuggestionOnCommitCharacter": false,  // Control manual
-    "editor.acceptSuggestionOnEnter": "smart",          // Inteligente
-    "editor.tabCompletion": "onlySnippets",             // Solo snippets profesionales
-    "editor.wordBasedSuggestions": "matchingDocuments", // Documentos relacionados    "editor.suggest.maxVisibleSuggestions": 8,          // Lista manejable
-    "editor.suggest.statusBar.visible": true,           // Mostrar estado
-
-    // Configuraciones adicionales de sugerencias
-    "editor.suggest.localityBonus": true,
-    "editor.suggest.filterGraceful": true,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,  // Permitir combinación profesional
-
-    // Configuraciones de sugerencias inteligentes - PROFESIONALES
-    "editor.suggest.showKeywords": true,
-    "editor.suggest.showSnippets": true,              // Habilitado para snippets profesionales
-    "editor.suggest.showWords": true,
-    "editor.suggest.showMethods": true,
-    "editor.suggest.showFunctions": true,
-    "editor.suggest.showProperties": true,
-    "editor.suggest.showVariables": true,
-    "editor.suggest.showConstructors": true,          // Habilitado para OOP
-    "editor.suggest.showClasses": true,               // Habilitado para clases
-    "editor.suggest.showInterfaces": true,            // Habilitado para TypeScript
-    "editor.suggest.showModules": true,               // Habilitado para imports
-    "editor.suggest.showConstants": true,             // Habilitado para constantes
-    "editor.suggest.showEnums": true,                 // Habilitado para enums
-    "editor.suggest.showTypeParameters": true,        // Habilitado para generics
-
-    // DESHABILITADAS las opciones menos profesionales
-    "editor.suggest.showStructs": false,
-    "editor.suggest.showEvents": false,
-    "editor.suggest.showOperators": false,
-    "editor.suggest.showUnits": false,
-    "editor.suggest.showValues": false,
-    "editor.suggest.showEnumMembers": false,
-    "editor.suggest.showColors": false,
-    "editor.suggest.showFiles": false,
-    "editor.suggest.showReferences": false,
-    "editor.suggest.showCustomcolors": false,
-    "editor.suggest.showUsers": false,
-    "editor.suggest.showIssues": false,    // Configuración de ayudas visuales PROFESIONAL OPTIMIZADA
-    "editor.parameterHints.enabled": true,
-    "editor.parameterHints.cycle": true,              // Navegación entre parámetros
-    "editor.hover.delay": 150,                        // Respuesta rápida optimizada
-    "editor.hover.sticky": true,                      // Hover persistente para análisis// ========== GITHUB COPILOT CONFIGURACIÓN PROFESIONAL ==========
-
-    // Habilitación selectiva y profesional
-    "github.copilot.enable": {
-        "*": true,
-        "javascript": true,
-        "javascriptreact": true,
-        "typescript": true,
-        "typescriptreact": true,
-        "html": true,
-        "css": true,
-        "scss": true,
-        "json": true,
-        "jsonc": true,
-        "markdown": true,
-        "yaml": true,
-        // Deshabilitado para archivos sensibles
-        "plaintext": false,
-        "xml": false,
-        "sql": false
-    },
-
-    // Chat profesional en español
-    "github.copilot.chat.localeOverride": "es",
-    "github.copilot.chat.welcomeMessage": "never",
-    "github.copilot.chat.executeImmediately": false,    // Configuración avanzada para profesionales - OPTIMIZADA 100/100
-    "github.copilot.advanced": {
-        // Parámetros perfectos para código profesional
-        "length": 1200,              // Contexto óptimo
-        "temperature": 0.35,         // Balance perfecto creatividad-precisión
-        "top_p": 0.85,              // Diversidad controlada óptima
-        "frequency_penalty": 0.25,   // Evita repeticiones efectivamente
-        "presence_penalty": 0.15,    // Variedad sin excesos
-        "listCount": 5,             // Opciones suficientes
-        "inlineSuggestCount": 3,    // Múltiples opciones inline
-        "debug": false,
-        "indentationMode": "auto"   // Respeta indentación del proyecto
-    },
-
-    // Editor inline profesional
-    "editor.inlineSuggest.enabled": true,
-    "editor.inlineSuggest.suppressSuggestions": false,
-    "editor.inlineSuggest.showToolbar": "onHover",
-    "editor.inlineSuggest.fontFamily": "Consolas, 'Courier New', monospace",
-    // Configuraciones de seguridad profesional
-    "github.copilot.editor.enableCodeActions": true,
-    "github.copilot.editor.iterativeCodeActions": false,  // Evita cambios en cascada
-    "github.copilot.conversationHistory": true,
-    "github.copilot.referencesInChat": true,
-
-    // Rendimiento y configuración del workspace PROFESIONAL
-    "workbench.editor.enablePreview": true,              // Preview habilitado para revisión
-    "workbench.editor.enablePreviewFromQuickOpen": true, // Quick open con preview
-    "workbench.editor.revealIfOpen": true,               // Revelar archivos abiertos
-    "workbench.editor.highlightModifiedTabs": true,      // Resaltar tabs modificados
-    "search.followSymlinks": false,
-    "search.useGlobalIgnoreFiles": true,                 // Usar .gitignore en búsquedas
-    "search.smartCase": true,                            // Búsqueda inteligente
-
-    // Exclusiones optimizadas para rendimiento
+    // ===== Rendimiento =====
     "files.watcherExclude": {
         "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
         "**/node_modules/**": true,
         "**/dist/**": true,
-        "**/build/**": true,
-        "**/.cache/**": true,
-        "**/coverage/**": true
+        "**/build/**": true
     },
 
-    // Configuraciones adicionales para desarrollo profesional
+    // ===== UI y UX =====
     "editor.minimap.enabled": true,
-    "editor.minimap.showSlider": "always",
-    "editor.scrollBeyondLastLine": false,
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorSmoothCaretAnimation": "on",
     "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "workbench.list.smoothScrolling": true,
-    "terminal.integrated.smoothScrolling": true
+    "terminal.integrated.smoothScrolling": true,
+
+    // ===== Sugerencias y Autocompletado =====
+    "editor.suggestSelection": "first",
+    "editor.suggest.preview": true,
+    "editor.suggest.showStatusBar": true,
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.inlineSuggest.enabled": true
 }

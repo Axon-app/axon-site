@@ -7,17 +7,26 @@
             "DOM.Iterable"
         ],
         "module": "ESNext",
-        "skipLibCheck": true,
-        "moduleResolution": "node",
-        "allowImportingTsExtensions": false,
+        "moduleResolution": "bundler",
+        "allowJs": true,
+        "checkJs": false,
+        "jsx": "react-jsx",
+        "jsxImportSource": "react",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx",
-        "strict": true,        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true,
-        "baseUrl": "."
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+            "@components/*": ["./src/components/*"],
+            "@hooks/*": ["./src/hooks/*"],
+            "@services/*": ["./src/services/*"],
+            "@data/*": ["./src/data/*"]
+        }
     },
     "include": [
         "src/**/*",
@@ -28,6 +37,6 @@
     "exclude": [
         "node_modules",
         "dist",
-        "public"
+        "coverage"
     ]
 }
