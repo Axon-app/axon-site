@@ -48,18 +48,16 @@ TechCarousel.displayName = "TechCarousel";
 // Banner de testimonios optimizado
 export const TestimonialsBanner = React.memo(({ testimonials = [] }) => {
   if (!testimonials.length) return null;
-
   return (
-    <div className="py-8 sm:py-16 bg-gradient-to-r from-slate-900 via-blue-900/20 to-slate-900">
+    <div className="py-8 sm:py-16 bg-gradient-to-r from-gray-900 via-black to-gray-900">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
           Lo Que Dicen Nuestros Clientes
         </h2>
 
-        <div className="relative overflow-hidden">
-          {/* Gradientes laterales */}
-          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none"></div>
+        <div className="relative overflow-hidden">          {/* Gradientes laterales */}
+          <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-gray-900 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-gray-900 to-transparent z-10 pointer-events-none"></div>
           {/* Carrusel de testimonios */}{" "}
           <div
             className="flex animate-scroll-testimonials gap-4 sm:gap-6"

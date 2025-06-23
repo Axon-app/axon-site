@@ -52,10 +52,11 @@ const App = () => {
     closeQuoteModal,
     closeConsultationModal,
   } = useModals();
-
   // Efecto para detectar la sección activa al hacer scroll
   React.useEffect(() => {
-    let ticking = false;    const handleScroll = () => {
+    let ticking = false;
+
+    const handleScroll = () => {
       const sections = [
         "hero",
         "about",
@@ -163,10 +164,8 @@ const App = () => {
     >
       <span className="text-2xl">⚡</span>
     </div>
-  );
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white font-sans overflow-x-hidden">
+  );  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white font-sans overflow-x-hidden">
       {/* Professional Navbar */}
       <nav className="fixed w-full z-50 glass-effect navbar-blur shadow-2xl border-b border-gray-800/50 nav-slide-in">
         <div className="container mx-auto px-4 lg:px-8">
@@ -574,184 +573,51 @@ const App = () => {
             </div>
           </div>
         </div>
-      </nav>      {/* Hero Section - Creative & Professional */}
+      </nav>
+      {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative flex items-center justify-center min-h-screen text-center p-8 overflow-hidden pt-20 md:pt-0"
       >
-        {/* Creative Animated Background */}
-        <div className="absolute inset-0 z-0">
-          {/* Dynamic Grid Pattern */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-950/80 to-slate-900/90"></div>
-
-          {/* Animated Mesh Grid */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-
-          {/* Floating Geometric Elements */}
-          <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-500/20 rounded-lg rotate-12 animate-pulse"></div>
-          <div className="absolute top-40 right-40 w-24 h-24 border border-blue-500/20 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-32 left-32 w-20 h-20 border border-purple-500/20 rounded-lg rotate-45 animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-20 right-20 w-16 h-16 border border-cyan-500/20 rounded-full animate-ping" style={{ animationDelay: '3s' }}></div>
-
-          {/* Gradient Orbs with Enhanced Animation */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 via-blue-500/5 to-purple-500/10 rounded-full blur-3xl animate-blob"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-500/8 via-pink-500/5 to-blue-500/8 rounded-full blur-3xl animate-blob" style={{ animationDelay: '3s' }}></div>
-
-          {/* Floating Particles */}
-          <div className="absolute top-10 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '2.5s' }}></div>
+        <div className="absolute inset-0 z-0 opacity-10">
+          {/* Fondo de partículas o formas futuristas con movimiento dinámico */}
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-purple-500 rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-green-500 rounded-full mix-blend-screen animate-blob"></div>
         </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-              {/* Logo & Brand Section */}
-            <div className="text-center mb-12">
-              {/* Enhanced Tagline */}
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-xl"></div>
-                <div className="relative inline-flex items-center bg-slate-800/60 backdrop-blur-md border border-slate-600/50 rounded-full px-8 py-4 shadow-2xl">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                    <span className="text-slate-200 font-medium tracking-wide">
-                      LÍDERES EN INNOVACIÓN TECNOLÓGICA
-                    </span>
-                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Main Headlines with Background Logo */}
-            <div className="text-center mb-16 relative">              {/* Large Background Logo */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ perspective: '1000px' }}>
-                {!logoError ? (
-                  <img
-                    src={logo1}
-                    alt="Axon Background"
-                    className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] object-contain opacity-30 filter brightness-110 contrast-125 animate-[logoRotate_15s_linear_infinite]"
-                    style={{ transformStyle: 'preserve-3d' }}
-                    onError={handleLogoError}
-                  />
-                ) : (
-                  <div
-                    className="w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-br from-cyan-500/20 via-blue-500/15 to-purple-500/20 rounded-full flex items-center justify-center opacity-40 backdrop-blur-sm animate-[logoRotate_15s_linear_infinite]"
-                    style={{ transformStyle: 'preserve-3d' }}
-                  >
-                    <span className="text-8xl md:text-9xl lg:text-[200px] font-black bg-gradient-to-br from-slate-600 via-slate-500 to-slate-600 bg-clip-text text-transparent" style={{
-                      textShadow: '0 0 50px rgba(148, 163, 184, 0.3)'
-                    }}>AXON</span>
-                  </div>
-                )}
-
-                {/* Additional Glow Effect for Logo */}
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/8 to-purple-500/5 rounded-full blur-3xl animate-[logoRotate_20s_linear_infinite_reverse]" style={{ transformStyle: 'preserve-3d' }}></div>
-              </div>
-
-              {/* Main Title with 3D Effect */}
-              <div className="relative z-10">
-                <h1 className="relative text-5xl md:text-7xl lg:text-8xl font-bold leading-none mb-8">
-                  <div className="mb-4">
-                    <span className="block font-light tracking-tight relative">
-                      {/* 3D Text Shadow Effect */}
-                      <span className="absolute inset-0 text-slate-600" style={{
-                        transform: 'translate(3px, 3px)',
-                        textShadow: '1px 1px 0 #475569, 2px 2px 0 #475569, 3px 3px 0 #475569, 4px 4px 0 #475569, 5px 5px 0 #475569'
-                      }}>
-                        Desarrollamos
-                      </span>                      <span className="relative text-white" style={{
-                        textShadow: '0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.3)'
-                      }}>
-                        Desarrollamos
-                      </span>
-                    </span>
-                  </div>
-                  <div className="relative">
-                    <span className="block font-black tracking-tighter relative">
-                      {/* 3D Gradient Text Shadow Effect */}
-                      <span className="absolute inset-0" style={{
-                        transform: 'translate(4px, 4px)',
-                        background: 'linear-gradient(135deg, #0891b2, #3730a3, #7c3aed)',
-                        WebkitBackgroundClip: 'text',
-                        backgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        opacity: 0.6,
-                        textShadow: '1px 1px 0 #1e293b, 2px 2px 0 #1e293b, 3px 3px 0 #1e293b, 4px 4px 0 #1e293b'
-                      }}>
-                        el Futuro
-                      </span>
-                      <span className="relative bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent" style={{
-                        textShadow: '0 0 30px rgba(6,182,212,0.6), 0 0 60px rgba(59,130,246,0.4), 0 0 90px rgba(147,51,234,0.3)'
-                      }}>
-                        el Futuro
-                      </span>
-                    </span>
-                    {/* Animated underline */}
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-[expandWidth_2s_ease-in-out_infinite]"></div>
-                  </div>
-                </h1>
-              </div>
-
-              {/* Enhanced Subtitle */}
-              <div className="max-w-4xl mx-auto mb-12">
-                <p className="text-xl md:text-2xl lg:text-3xl text-slate-300 font-light leading-relaxed">
-                  Transformamos
-                  <span className="relative mx-2">
-                    <span className="text-cyan-300 font-medium">ideas revolucionarias</span>
-                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-transparent"></div>
-                  </span>
-                  en
-                  <br className="hidden md:block" />
-                  soluciones digitales de
-                  <span className="relative mx-2">
-                    <span className="text-blue-300 font-medium">clase mundial</span>
-                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-transparent"></div>
-                  </span>
-                </p>
-              </div>
-
-              {/* Professional CTA Section */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button
-                  onClick={openQuoteModal}
-                  className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                  <span className="relative">Comenzar Proyecto</span>
-                </button>
-
-                <button
-                  onClick={openConsultationModal}
-                  className="group px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-xl hover:border-cyan-500 hover:text-cyan-300 transition-all duration-300 backdrop-blur-sm"
-                >
-                  <span className="relative">
-                    Consulta Gratuita
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Tech Stack Preview */}
-            <div className="text-center">
-              <div className="inline-flex items-center space-x-6 bg-slate-800/40 backdrop-blur-sm rounded-2xl px-8 py-4 border border-slate-700/50">
-                <span className="text-slate-400 text-sm font-medium">Tecnologías:</span>
-                <div className="flex items-center space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">JS</div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">TS</div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">AI</div>
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-cyan-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">+</div>
-                </div>
-              </div>
-            </div>
+        <div className="relative z-10 flex flex-col items-center max-w-4xl mx-auto">
+          {/* Logo de Axon.App en la sección Hero */}
+          <div className="mb-8 animate-fadeInScale">
+            {!logoError ? (
+              <img
+                src={logo1}
+                alt="Axon.App Logo"
+                className="h-20 md:h-28 w-auto mx-auto"
+                onError={handleLogoError}
+              />
+            ) : (
+              <LogoSVG className="h-20 md:h-28 w-20 md:w-28 mx-auto" />
+            )}
           </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight animate-fadeInUp text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-500">
+            Desarrollamos el Futuro.
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 mb-10 animate-fadeInUp delay-200">
+            Soluciones de software y aplicaciones que transforman ideas en
+            realidad.
+          </p>
+          <a
+            href="#services"
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 animate-bounceIn delay-400"
+          >
+            Explorar Servicios
+          </a>
         </div>
       </section>
       {/* About Us Section - Mission & Vision */}
       <section
         id="about"
-        className="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+        className="py-20 md:py-32 bg-gray-900 bg-opacity-70 backdrop-blur-md relative overflow-hidden"
       >
         {/* Efectos de fondo animados */}
         <div className="absolute inset-0">
@@ -958,7 +824,7 @@ const App = () => {
       {/* Services Section - Professional Design */}
       <section
         id="services"
-        className="py-20 md:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+        className="py-20 md:py-32 bg-gradient-to-br from-gray-800 via-gray-900 to-slate-900 relative overflow-hidden"
       >
         {/* Efectos de fondo animados */}
         <div className="absolute inset-0">
@@ -1338,8 +1204,8 @@ const App = () => {
         </div>
       </section>
       {/* Stats Counter Section - Logros y Proyectos */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
-        {/* Efectos de fondo animados */}
+      <section className="py-16 md:py-20 bg-gradient-to-br from-gray-800 to-slate-800 relative overflow-hidden">
+        {/* Efectos de fondo */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-blob"></div>
           <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-blob" style={{ animationDelay: '2s' }}></div>
@@ -1499,11 +1365,9 @@ const App = () => {
             </div>
           </div>
         </div>
-      </section>
-      {/* Testimonials Section */}
-      <section
+      </section>      {/* Testimonials Section */}      <section
         id="testimonials"
-        className="py-16 md:py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden"
+        className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-gray-900 to-black relative overflow-hidden"
       >
         {/* Efectos de fondo animados */}
         <div className="absolute inset-0">
@@ -2285,10 +2149,9 @@ const App = () => {
             </div>
           </a>
         </div>
-      </footer>
-      {/* Cookie Banner */}
+      </footer>      {/* Cookie Banner */}
       {showCookieBanner && (
-        <div className="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-gray-700 shadow-2xl z-40 p-4">
+        <div className="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 shadow-2xl z-40 p-4">
           <div className="container mx-auto max-w-6xl">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
               {" "}
