@@ -1122,3 +1122,23 @@ select option:checked {
 .border-3 {
   border-width: 3px;
 }
+
+/* Animación para la línea expandible del banner */
+@keyframes expandWidth {
+  0%, 100% {
+    width: 0;
+  }
+  50% {
+    width: 60%;
+  }
+}
+
+/* Animación de rotación horizontal para el logo del banner */
+@keyframes logoRotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
