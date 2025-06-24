@@ -7,17 +7,16 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Axon-app/axon-site.git"
-  },
-  "scripts": {
+  },  "scripts": {
     "dev": "vite",
     "dev:alt": "vite --port 3001",
-  "build": "vite build",
+    "build": "vite build",
     "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext js,jsx --fix",
     "clean": "rimraf dist",
-  "clean:modules": "rimraf node_modules",
+    "clean:modules": "rimraf node_modules",
     "clean:all": "rimraf dist node_modules package-lock.json",
     "clean:build": "npm run clean && npm run build",
     "analyze": "rollup-plugin-visualizer",
