@@ -1,0 +1,3 @@
+Archivo creado para forzar el despliegue en GitHub Pages.
+Fecha: 23/06/2025
+Sitio: https://axon-app.github.io/axon-site/
