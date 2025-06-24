@@ -20,8 +20,8 @@
     "clean:modules": "rimraf node_modules",
     "clean:all": "rimraf dist node_modules package-lock.json",
     "clean:build": "npm run clean && npm run build",
-    "deploy": "npm run build && gh-pages -d dist",
-    "deploy:production": "npm run clean:build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist -b gh-pages -m \"Despliegue: $(date)\"",
+    "deploy:production": "npm run clean:build && gh-pages -d dist -b gh-pages -m \"Despliegue de producción: $(date)\"",
     "analyze": "rollup-plugin-visualizer"
   },
   "dependencies": {

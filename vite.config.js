@@ -2,6 +2,7 @@ import react from "@vitejs/plugin-react";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
+import fs from "fs";
 
 // Obtener el equivalente a __dirname en ESM
 const __filename = fileURLToPath(import.meta.url);
@@ -9,7 +10,15 @@ const __dirname = dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'copy-nojekyll',
+      closeBundle: () => {
+        fs.copyFileSync('public/.nojekyll', 'dist/.nojekyll');
+      }
+    }
+  ],
   base: mode === "production" ? "/Axon.app/" : "/",
 
   // Configuración del servidor de desarrollo
