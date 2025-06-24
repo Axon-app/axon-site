@@ -5,7 +5,9 @@
 @import "@fontsource/rajdhani/600.css";
 @import "@fontsource/rajdhani/700.css";
 
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Animaciones personalizadas */
 @keyframes blob {

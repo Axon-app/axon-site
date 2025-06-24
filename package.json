@@ -7,71 +7,32 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Axon-app/axon-site.git"
-  },  "scripts": {
+  },
+  "scripts": {
     "dev": "vite",
-    "dev:alt": "vite --port 3001",
     "build": "vite build",
-    "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext js,jsx --fix",
     "clean": "rimraf dist",
-    "clean:modules": "rimraf node_modules",
-    "clean:all": "rimraf dist node_modules package-lock.json",
-    "clean:build": "npm run clean && npm run build",
-    "analyze": "rollup-plugin-visualizer",
-    "check-deployment": "echo \"Verificando estado del despliegue en https://axon-app.github.io/axon-site/\"",
-    "prepare-manual-deploy": "echo \"ADVERTENCIA: El despliegue manual está desactivado, usa GitHub Actions\""
+    "clean:all": "rimraf dist node_modules package-lock.json"
   },
   "dependencies": {
-    "@fontsource/orbitron": "^5.2.6",
-    "@fontsource/rajdhani": "^5.2.6",
-    "canvas": "^3.1.0",
+    "@fontsource/orbitron": "^5.0.0",
+    "@fontsource/rajdhani": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/generator": "^7.27.5",
-    "@babel/template": "^7.27.2",
-    "@babel/traverse": "^7.27.4",
-    "@eslint/js": "^9.25.0",
-    "@tailwindcss/postcss": "^4.1.10",
-    "@types/babel__generator": "^7.27.0",
-    "@types/babel__template": "^7.4.4",
-    "@types/babel__traverse": "^7.20.7",
-    "@types/node": "^24.0.3",
-    "@types/prop-types": "^15.7.15",
-    "@types/react": "^18.3.23",
-    "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react": "^4.4.1",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "postcss": "^8.4.31",
-    "prop-types": "^15.8.1",
-    "rimraf": "^6.0.1",
-    "rollup-plugin-visualizer": "^5.12.0",
-    "tailwindcss": "^4.1.10",
-    "terser": "^5.42.0",
-    "to-ico": "^1.0.1",
-    "vite": "^6.3.5"
-  },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "postcss": "^8.4.24",
+    "rimraf": "^5.0.1",
+    "tailwindcss": "^3.3.2",
+    "terser": "^5.43.1",
+    "vite": "^4.3.9"
   }
 }
