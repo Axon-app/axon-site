@@ -1,9 +1,8 @@
-{
-  "name": "axon",
+{  "name": "axon",
   "private": true,
   "version": "2.4.0",
   "type": "module",
-  "homepage": "https://axon-app.github.io/Axon.app/",
+  "homepage": "https://axon-app.github.io/axon-site/",
   "repository": {
     "type": "git",
     "url": "https://github.com/axon-app/Axon.app.git"

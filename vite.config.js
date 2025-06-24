@@ -19,7 +19,7 @@ export default defineConfig(({ mode }) => ({
       }
     }
   ],
-  base: mode === "production" ? "/Axon.app/" : "/",
+  base: mode === "production" ? "/axon-site/" : "/",
 
   // Configuración del servidor de desarrollo
   server: {

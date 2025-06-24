@@ -4,15 +4,15 @@
 [![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1+-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-222222?logo=github&logoColor=white)](https://pages.github.com/)
-[![Live Site](https://img.shields.io/badge/🌐%20Live%20Site-Visit%20Now-brightgreen)](https://axon-app.github.io/Axon.app/)
+[![Live Site](https://img.shields.io/badge/🌐%20Live%20Site-Visit%20Now-brightgreen)](https://axon-app.github.io/axon-site/)
 
 > **Sitio web profesional moderno para Axon.App** - Soluciones tecnológicas innovadoras con sistema completo de formularios y captación de leads
 
 ## 🌐 **SITIO EN VIVO**
 
-### **[🚀 VER AXON.APP EN PRODUCCIÓN](https://axon-app.github.io/Axon.app/)**
+### **[🚀 VER AXON.APP EN PRODUCCIÓN](https://axon-app.github.io/axon-site/)**
 
-**URL de Producción:** `https://axon-app.github.io/Axon.app/`
+**URL de Producción:** `https://axon-app.github.io/axon-site/`
 
 ## 📋 **Proceso de Despliegue**
 
