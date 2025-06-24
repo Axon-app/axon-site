@@ -20,19 +20,20 @@
     "@fontsource/orbitron": "^5.0.0",
     "@fontsource/rajdhani": "^5.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.3.1",
+    "react": "^18.3.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.38.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.3.4",
-    "postcss": "^8.4.24",
-    "rimraf": "^5.0.1",
-    "tailwindcss": "^3.3.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.4.38",
+    "rimraf": "^5.0.7",
+    "tailwindcss": "^3.4.4",
     "terser": "^5.43.1",
-    "vite": "^4.3.9"
+    "vite": "^5.3.1"
   }
 }
