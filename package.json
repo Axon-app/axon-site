@@ -1,25 +1,27 @@
-{  "name": "axon",
+{
+  "name": "axon",
   "private": true,
   "version": "2.4.0",
   "type": "module",
-  "homepage": "https://axon-app.github.io/axon-site/",
-  "repository": {
+  "homepage": "https://axon-app.github.io/axon-site/",  "repository": {
     "type": "git",
-    "url": "https://github.com/axon-app/Axon.app.git"
+    "url": "https://github.com/Axon-app/axon-site.git"
   },
   "scripts": {
     "dev": "vite",
     "dev:alt": "vite --port 3001",
     "build": "vite build",
     "build:analyze": "vite build --mode analyze",
-    "preview": "vite preview",    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+  "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext js,jsx --fix",
     "clean": "rimraf dist",
     "clean:modules": "rimraf node_modules",
-    "clean:all": "rimraf dist node_modules package-lock.json",    "clean:build": "npm run clean && npm run build",
-    "analyze": "rollup-plugin-visualizer",
-    "check-deployment": "echo \"Verificando estado del despliegue en https://axon-app.github.io/Axon.app/\"",
-    "prepare-manual-deploy": "echo \"ADVERTENCIA: El despliegue manual está desactivado, usa GitHub Actions\""
+    "clean:all": "rimraf dist node_modules package-lock.json",
+  "clean:build": "npm run clean && npm run build",
+  "analyze": "rollup-plugin-visualizer",
+  "check-deployment": "echo \"Verificando estado del despliegue en https://axon-app.github.io/axon-site/\"",
+  "prepare-manual-deploy": "echo \"ADVERTENCIA: El despliegue manual está desactivado, usa GitHub Actions\""
   },
   "dependencies": {
     "@fontsource/orbitron": "^5.2.6",
