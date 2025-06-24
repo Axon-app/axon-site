@@ -101,6 +101,8 @@ jobs:
           echo "Starting build process at $(date)"
           npm run build
           echo "Build completed at $(date)"
+          # Asegurar que .nojekyll está presente en dist
+          touch dist/.nojekyll
         env:
           NODE_ENV: production
           CI: true

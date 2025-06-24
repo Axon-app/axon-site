@@ -15,14 +15,12 @@
     "build:analyze": "vite build --mode analyze",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint . --ext js,jsx --fix",
-    "clean": "rimraf dist",
+    "lint:fix": "eslint . --ext js,jsx --fix",    "clean": "rimraf dist",
     "clean:modules": "rimraf node_modules",
     "clean:all": "rimraf dist node_modules package-lock.json",
     "clean:build": "npm run clean && npm run build",
-    "deploy": "npm run build && gh-pages -d dist -b gh-pages -m \"Despliegue: $(date)\"",
-    "deploy:production": "npm run clean:build && gh-pages -d dist -b gh-pages -m \"Despliegue de producción: $(date)\"",
-    "analyze": "rollup-plugin-visualizer"
+    "analyze": "rollup-plugin-visualizer",
+    "prepare-manual-deploy": "echo \"ADVERTENCIA: El despliegue manual está desactivado, usa GitHub Actions\""
   },
   "dependencies": {
     "@fontsource/orbitron": "^5.2.6",

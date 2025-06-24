@@ -14,6 +14,14 @@
 
 **URL de Producción:** `https://axon-app.github.io/Axon.app/`
 
+## 📋 **Proceso de Despliegue**
+
+El despliegue se realiza automáticamente mediante **GitHub Actions** cuando se hace push a la rama `main`.
+
+⚠️ **IMPORTANTE**: No utilizar comandos de despliegue manual como `npm run deploy`, ya que podrían generar conflictos con el proceso automatizado. Todo el despliegue se gestiona mediante el flujo de trabajo definido en `.github/workflows/deploy.yml`.
+
+Los cambios pueden tardar unos minutos en reflejarse en el sitio publicado después de que GitHub Actions termine su ejecución.
+
 ---
 
 ## ✨ Características Principales
