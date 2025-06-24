@@ -2,20 +2,18 @@
     "name": "Axon.App - Desarrollo Web Profesional",
     "short_name": "Axon.App",
     "description": "Desarrollo Web Profesional - Soluciones Tecnológicas Innovadoras",
-    "icons": [
-        {
-            "src": "favicon.png",
+    "icons": [        {
+            "src": "/axon-site/favicon.png",
             "sizes": "any",
             "type": "image/png",
             "purpose": "any maskable"
-        },
-        {
-            "src": "favicon.ico",
+        },        {
+            "src": "/axon-site/favicon.ico",
             "sizes": "16x16 32x32 48x48",
             "type": "image/x-icon"
         }
     ],
-    "start_url": "/Axon.app/",
+    "start_url": "/axon-site/",
     "display": "standalone",
     "theme_color": "#1f2937",
     "background_color": "#ffffff",
